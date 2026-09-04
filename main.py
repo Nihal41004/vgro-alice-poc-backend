@@ -32,14 +32,14 @@ class AuthCallbackRequest(BaseModel):
     appCode: str
 
 
-@app.get("/api")
+@app.get("/")
 def root():
     return {
         "message": "VGRO Alice Blue POC Backend Running"
     }
 
 
-@app.get("/api/health")
+@app.get("/health")
 def health():
 
     app_code = os.getenv("ALICE_APP_CODE")
