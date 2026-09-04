@@ -6,10 +6,12 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 app = FastAPI(
     title="VGRO Alice Blue POC",
     version="1.0.0"
 )
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -39,6 +41,7 @@ def root():
 
 @app.get("/health")
 def health():
+
     app_code = os.getenv("ALICE_APP_CODE")
     api_secret = os.getenv("ALICE_API_SECRET")
 
